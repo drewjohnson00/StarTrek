@@ -1,0 +1,42 @@
+Startrek Notes
+
+Messages from Reality Server to Enterprise Client
+* If quadrant summary changes (e.g. Klingon killed, star destroyed, klingon changes quadrants, enterprise changes quadrants, etc.)
+	1) if there is a base within 1 quadrant of the changed quadrant, send Quadrant Summary Change message to all Enterprises
+	2) if an Enterprise is within 1 quadrant of the changed quadrant, send Quadrant Summary Change message to that Enterprise
+	3) if an Enterprise is within the changed quadrant, send Quadrant Detail message to that Enterprise
+* If an Enterprise moves to a different quadrant
+	1) Send Enterprise a Quadrant Detail message for the destination quadrant
+	2) Send Enterprise a Quadrant Summary Change message for the quadrant being left (IsQuadrantRealTime = false)
+* If a base is destroyed
+	1) Send (each) Enterprise a Quadrant Summary 
+* If an Enterprise moves on to a base
+	1) Send Enterprise a Dock Successful message
+	
+
+	
+	
+Messages from Enterprise to Reality Server
+* If Enterprise fires Phasors, send a Phasors Fired message
+* If Enterprise fires Torpedoes, send a Torpedoes Fired message
+* If Enterprise moves, send a Enterprise Movement message
+
+
+Messages:
+* Quadrant Summary Change message
+  - List of the following fields for every "visible" quadrant for an Enterprise -- no duplicates for a quadrant and ordered by x, then y.
+	- Quadrant X,Y (int,int)
+	- Quadrant summary (int)
+* Quadrant Detail message
+  - The char content of each sectior -- array of (int,int)
+  - Quadrant X,Y (int, int)
+  - Quadrant Summary (int)
+* Dock Successful message
+* Phasors fired message
+  - Phasor Energy
+* Torpedoes fired message
+  - Torpedo Angle
+* Enterprise Movement message
+  - Enterprise From Quadrant/Sector
+  - Enterprise To Quadrant/Sector
+  - Warp Speed

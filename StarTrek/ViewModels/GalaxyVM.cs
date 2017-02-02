@@ -5,63 +5,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using StarTrek.Models;
 
 namespace StarTrek.ViewModels
 {
     public class GalaxyVM : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        //public ObservableCollection<QuadrantSummary> _quadrantSummaryRow;
+        private List<QuadrantSummary> _quadrantList;
 
         public GalaxyVM()
         {
-        }
+            _quadrantList = new List<QuadrantSummary>();
 
-        public ObservableCollection<ObservableCollection<QuadrantSummary>> QuadrantSummaryRows
-        {
-            get
+            var quadrantModel = Enterprise.Instance.KnownGalaxy.Quadrants;
+
+            for (int x = 0; x < 8; x++)
             {
-
-            }
-        }
-
-        public ObservableCollection<QuadrantSummary> QuadrantSummaryRow
-        {
-            get
-            {
-                var _quadrantSummaryRow = new ObservableCollection<QuadrantSummary>();
-
-                for (int n = 0; n < 8; n++)
+                for (int y = 0; y < 8; y++)
                 {
-                    _quadrantSummaryRow.Add(new QuadrantSummary { Summary = Enterprise.KnownGalaxy.QuadrantSummary(0, n) });
+                    var qs = new QuadrantSummary();
+                    quadrantModel[x][y].QuadrantChangeEvent += qs.ChangeHandler;
+                    _quadrantList.Add(qs);
                 }
-
-                return _quadrantSummaryRow;
             }
         }
 
-        //private string _message;
-        //public string Message
+        public List<QuadrantSummary> QuadrantList => _quadrantList;
+
+        //private string _TestText;
+        //public string TestText
         //{
-        //    get { return Enterprise.KnownGalaxy.Message; }
+        //    get { return _TestText; }
         //    set
         //    {
-        //        if (value != null)
-        //        {
-        //            _message = value;
-        //            PropertyChanged(this, new PropertyChangedEventArgs("Message"));
-        //        }
+        //        _TestText = value;
+        //        _quadrantList[0].Summary = value;
+        //        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("TestText"));
         //    }
         //}
     }
 
-    public class QuadrantSummary
+    public class QuadrantSummary : INotifyPropertyChanged
     {
-        private string _summary;
+        public string _summary;
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public string Summary
         {
             get { return _summary; }
-            set { _summary = value; }
         }
+
+        public bool Active { get; set; }
+
+        public void ChangeHandler(object sender, QuadrantChangeEventArgs e)
+        {
+            _summary = (e.Enemies * 100 + e.Bases * 10 + e.Stars).ToString();
+            Active = e.Active;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Summary"));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Active"));
+        }
+
     }
 }

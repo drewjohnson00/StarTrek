@@ -1,4 +1,6 @@
 ﻿using StarTrekDomain;
+using System;
+using System.ComponentModel;
 
 namespace StarTrek.Models
 {
@@ -7,8 +9,11 @@ namespace StarTrek.Models
         protected int _numberOfStars;
         protected int _numberOfBases;
         protected int _numberOfEnemies;
+        protected bool _active; // true if the summary was included in the most recent Quadrant Summary message
 
         private Sector[][] Sectors; // Sector[Row][Col]
+
+        public event EventHandler<QuadrantChangeEventArgs> QuadrantChangeEvent;
 
         public Quadrant()
         {
@@ -24,49 +29,34 @@ namespace StarTrek.Models
         }
 
 
-        public string QuadrantSummary()
-        {
-            int result = _numberOfEnemies * 100 + _numberOfBases * 10 + _numberOfStars;
-            return result.ToString();
-        }
-
         public char SectorDisplayValue(int row, int col)
         {
-            // TODO -- validate row and col are in range...
             return Sectors[row][col].DisplayValue;
         }
 
-        public void InitializeQuadrant()
+        public void SetQuadrantSummaryValues(int stars, int bases, int enemies)
         {
-            int count = 0;
-
-            for (int row = 0; row < 8; row++)
-            {
-                for (int col = 0; col < 8; col++, count++)
-                {
-                    Sectors[row][col] = new Sector();
-
-                    if (count % 5 == 0 && _numberOfStars < 9)
-                    {
-                        Sectors[row][col].Value = SectorContent.Star;
-                        _numberOfStars += 1;
-                    }
-                    else if (count % 12 == 0 && _numberOfEnemies < 9)
-                    {
-                        Sectors[row][col].Value = SectorContent.KlingonShip;
-                        _numberOfEnemies += 1;
-                    }
-                    else if (count % 200 == 0 && _numberOfBases < 9)
-                    {
-                        Sectors[row][col].Value = SectorContent.Base;
-                        _numberOfBases += 1;
-                    }
-                    else
-                    {
-                        Sectors[row][col].Value = SectorContent.Empty;
-                    }
-                }
-            }
+            _numberOfBases = bases;
+            _numberOfEnemies = enemies;
+            _numberOfStars = stars;
+            _active = true;
+            QuadrantChangeEvent?.Invoke(this, new QuadrantChangeEventArgs { Bases = bases, Enemies=enemies, Stars = stars, Active=true });
         }
+
+        public void SetQuadrantToInactive()
+        {
+            if (!_active) return;
+
+            _active = false;
+            QuadrantChangeEvent?.Invoke(this, new QuadrantChangeEventArgs { Active = false });
+        }
+    }
+
+    public class QuadrantChangeEventArgs : EventArgs
+    {
+        public int Stars { get; set; }
+        public int Bases { get; set; }
+        public int Enemies { get; set; }
+        public bool Active { get; set; }
     }
 }

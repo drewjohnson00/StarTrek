@@ -27,4 +27,18 @@ namespace StarTrek.UserControls
             InitializeComponent();
         }
     }
+
+    public class Extensions
+    {
+        // RowLocation
+        public static readonly DependencyProperty RowLocation = DependencyProperty.RegisterAttached("RowPosition", typeof(int), typeof(Extensions), new PropertyMetadata(default(int)));
+        public static void SetRowLocation(UIElement element, int value)
+        {
+            element.SetValue(RowLocation, value);
+        }
+        public static int GetRowLocation(UIElement element)
+        {
+            return (int)element.GetValue(RowLocation);
+        }
+    }
 }

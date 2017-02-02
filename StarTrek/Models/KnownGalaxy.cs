@@ -19,9 +19,16 @@
             InitializeGalaxy();
         }
 
-        public string QuadrantSummary(int row, int col)
+        public Quadrant[][] Quadrants => _quadrants;
+
+        //public string QuadrantSummary(int row, int col)
+        //{
+        //    return _quadrants[row][col].QuadrantSummary();
+        //}
+
+        public Quadrant GetQuadrant(int row, int col)
         {
-            return _quadrants[row][col].QuadrantSummary();
+            return _quadrants[row][col];
         }
 
         private void InitializeGalaxy()
@@ -31,7 +38,7 @@
                 for (int col = 0; col < 8; col++)
                 {
                     _quadrants[row][col] = new Quadrant();
-                    _quadrants[row][col].InitializeQuadrant();
+                    //_quadrants[row][col].InitializeQuadrant();
                 }
             }
         }

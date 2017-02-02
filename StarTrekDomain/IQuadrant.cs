@@ -8,7 +8,6 @@ namespace StarTrekDomain
 {
     public interface IQuadrant
     {
-        string QuadrantSummary();
         char SectorDisplayValue(int row, int col);
     }
 }

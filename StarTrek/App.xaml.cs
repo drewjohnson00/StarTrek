@@ -15,7 +15,7 @@ namespace StarTrek
     {
         void App_Startup(object sender, StartupEventArgs e)
         {
-
+            var x = Enterprise.Instance;
         }
     }
 }

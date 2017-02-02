@@ -55,10 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Messages\IMessage.cs" />
+    <Compile Include="Messages\QuadrantDetailMessage.cs" />
+    <Compile Include="Messages\QuadrantSummaryMessage.cs" />
     <Compile Include="Models\KnownGalaxy.cs" />
     <Compile Include="Enterprise.cs" />
     <Compile Include="Models\Quadrant.cs" />
     <Compile Include="Models\Sector.cs" />
+    <Compile Include="RealityQueue.cs" />
     <Compile Include="UserControls\Command.xaml.cs">
       <DependentUpon>Command.xaml</DependentUpon>
     </Compile>

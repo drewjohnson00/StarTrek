@@ -5,12 +5,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StarTrek.UserControls"
              xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
+             xmlns:extensions="clr-namespace:StarTrek.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
     </UserControl.Resources>
     <Grid Background="Beige">
-        <ItemsControl ItemsSource="{Binding QuadrantSummaryRows}">
+        <StackPanel Orientation="Vertical" >
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[0].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[1].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[2].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[3].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[4].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[5].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[6].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[7].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[8].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[9].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[10].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[11].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[12].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[13].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[14].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[15].Summary, diag:PresentationTraceSources.TraceLevel=High}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
+
+<!--<ItemsControl ItemsSource="{Binding QuadrantSummaryRows}">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <StackPanel Orientation="Vertical"/>
@@ -35,6 +61,4 @@
 
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
-        </ItemsControl>
-    </Grid>
-</UserControl>
+        </ItemsControl>-->
