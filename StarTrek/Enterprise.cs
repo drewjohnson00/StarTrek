@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using StarTrek.Models;
 using StarTrek.Messages;
+using System.Threading;
 
 namespace StarTrek
 {
@@ -15,14 +16,21 @@ namespace StarTrek
     {
         private static Enterprise _instance;
         private KnownGalaxy _knownGalaxy = null;
-        private RealityQueue _realityQueue = null;
+        private EnterpriseRealityQueue _enterpriseRealityQueue = null;
+        private Thread _myThread;
+        private Communication _comm;
+
 
         private Enterprise()
         {
             _knownGalaxy = new KnownGalaxy();
-            // TODO -- Start RealityReader thread here...
-            _realityQueue = new RealityQueue();
-            RealityQueue.QueueActive += OnRealityQueueActivity;
+            var realityQueue = new RealityQueue();
+            _enterpriseRealityQueue = new EnterpriseRealityQueue(realityQueue);
+            realityQueue.ReceiveMessageInQueue += OnRealityQueueActivity;
+            _comm = new Communication();
+            _myThread = new Thread(_comm.Start);
+            _myThread.IsBackground = true;
+            _myThread.Start(realityQueue);
         }
 
         public static Enterprise Instance
@@ -39,11 +47,11 @@ namespace StarTrek
 
         public KnownGalaxy KnownGalaxy => _knownGalaxy;
 
-        public RealityQueue RealityQueue => _realityQueue;
+        public EnterpriseRealityQueue EnterpriseRealityQueue => _enterpriseRealityQueue;
 
         public void OnRealityQueueActivity(object sender, EventArgs e)
         {
-            IMessage message = _realityQueue.Dequeue();
+            IMessage message = _enterpriseRealityQueue.GetMessage();
             if (message.MessageType == MessageType.QuadrantSummaryMessage)
             {
                 HandleQuadrantSummaryMessage((QuadrantSummaryMessage)message);

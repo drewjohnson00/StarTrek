@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Communication.cs" />
     <Compile Include="Messages\IMessage.cs" />
     <Compile Include="Messages\QuadrantDetailMessage.cs" />
     <Compile Include="Messages\QuadrantSummaryMessage.cs" />
