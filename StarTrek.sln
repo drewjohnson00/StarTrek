@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrekDomain", "StarTrekD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrekTest", "StarTrekTest\StarTrekTest.csproj", "{21D08DE4-4041-4A06-A6D4-BB40736BF5EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrekServer", "StarTrekServer\StarTrekServer.csproj", "{8506256F-95E1-4A26-8216-2EFC7A7F84B3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{21D08DE4-4041-4A06-A6D4-BB40736BF5EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D08DE4-4041-4A06-A6D4-BB40736BF5EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21D08DE4-4041-4A06-A6D4-BB40736BF5EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8506256F-95E1-4A26-8216-2EFC7A7F84B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8506256F-95E1-4A26-8216-2EFC7A7F84B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8506256F-95E1-4A26-8216-2EFC7A7F84B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8506256F-95E1-4A26-8216-2EFC7A7F84B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

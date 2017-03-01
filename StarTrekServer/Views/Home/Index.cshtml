@@ -1,0 +1,104 @@
+﻿<script type="text/javascript">
+    window.onload = function () {
+
+        function AppViewModel() {
+            var self = this;
+            self.views = ['Layout', 'Entities', 'Statistics']
+            self.currentView = ko.observable();
+            self.isLayoutViewActive = ko.observable();
+            self.isEntityViewActive = ko.observable();
+            self.isStatsViewActive = ko.observable();
+            self.gameIds = ko.observableArray([]);
+            self.currentGameId = ko.observable();
+            self.isGameIdsEmpty = ko.computed(function () {
+                return self.gameIds() == null || self.gameIds().length < 1;
+            });
+
+            // Behavours
+            self.changeView = function (newView) {
+                location.hash = newView
+            };
+
+            // Client-side routes
+            Sammy(function () {
+                this.get('#:option', function () {
+                    self.currentView(this.params['option']);
+                    if (self.currentView() === 'Layout') {
+                        self.isEntityViewActive(false);
+                        self.isStatsViewActive(false);
+                        self.isLayoutViewActive(true);
+                        self.getGameIds();
+                    } else if (self.currentView() === 'Entities') {
+                        self.isLayoutViewActive(false);
+                        self.isStatsViewActive(false);
+                        self.isEntityViewActive(true);
+                        self.getGameIds();
+                    } else if (self.currentView() === 'Statistics') {
+                        self.isLayoutViewActive(false);
+                        self.isEntityViewActive(false);
+                        self.isStatsViewActive(true);
+                        self.getGameIds();
+                    }
+                });
+
+                // handle empty hash url
+                this.get('', function () { this.app.runRoute('get', '#Layout') });
+            }).run();
+
+            self.getGameIds = function () {
+                $.getJSON("StartrekServer/Game/")
+                    .done(function (data) {
+                        alert(data);
+                        self.gameIds(data);
+                    }).fail(function (failCallbacks)
+                    {
+                        alert("Failed in getting Game/ endpoint. Status: " + failCallbacks.status + " - " + failCallbacks.statusText);
+                        //alert(failCallbacks);
+                    });
+            }
+        }
+
+        // Activates knockout.js
+        ko.applyBindings(new AppViewModel());
+    }
+
+</script>
+
+<div class="leftbar">
+    <div class="leftbarTitle">
+        Active Games
+    </div>
+    <div class="leftbarContent">
+        <div data-bind="visible: isGameIdsEmpty">
+            <p>(no active games)</p>
+        </div>
+        <div data-bind="foreach: gameIds" >
+            <p data-bind="text: $data"></p>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="nav">
+        <ul class="navbar" data-bind="foreach: views">
+            <li class="nav-tabs" data-bind="text: $data,
+                css: { selected: $data == $root.currentView() },
+                click: $root.changeView">
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-4" data-bind="visible: isLayoutViewActive()">
+        <h2>A</h2>
+        @*<h2 data-bind="text: title">A</h2>*@
+        @*<p>First name: <strong data-bind="text: firstName"></strong></p>
+            <p>Last name: <strong data-bind="text: lastName"></strong></p>
+            <p>First name: <input data-bind="value: firstName" /></p>
+            <p>Last name: <input data-bind="value: lastName" /></p>
+            <p>Full name: <strong data-bind="text: fullName"></strong></p>*@
+    </div>
+    <div class="col-md-4" data-bind="visible: isEntityViewActive()">
+        <h2>B</h2>
+    </div>
+    <div class="col-md-4" data-bind="visible: isStatsViewActive()">
+        <h2>C</h2>
+    </div>
+</div>

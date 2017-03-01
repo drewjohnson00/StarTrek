@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using StarTrek.Models;
 using StarTrek.Messages;
 using System.Threading;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using Newtonsoft.Json;
 
 namespace StarTrek
 {
@@ -23,7 +26,14 @@ namespace StarTrek
 
         private Enterprise()
         {
-            _knownGalaxy = new KnownGalaxy();
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                HttpContent content = new StringContent(JsonConvert.SerializeObject(Guid.NewGuid()), Encoding.UTF8, "application/json");
+                HttpResponseMessage response = client.PostAsync("http://localhost/StartrekServer/Game", content).Result;
+
+            }
+                _knownGalaxy = new KnownGalaxy();
             var realityQueue = new RealityQueue();
             _enterpriseRealityQueue = new EnterpriseRealityQueue(realityQueue);
             realityQueue.ReceiveMessageInQueue += OnRealityQueueActivity;

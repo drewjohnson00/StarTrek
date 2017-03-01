@@ -77,8 +77,8 @@ namespace StarTrekTest.MessageTests
             };
 
             // Add it to the queue
-            var e = Enterprise.Instance;
-            e.RealityQueue.Enqueue(testMessage);
+            //var e = Enterprise.Instance;
+            //e.RealityQueue.Enqueue(testMessage);
 
             // Verify results
         }
