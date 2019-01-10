@@ -1,0 +1,28 @@
+
+
+* Torpedo hitting a star (range of effect is no star damage, to star explosion of 5000 to 20,000)
+
+* Enterprise full has 10000 units of energy (max 2000 in shields) and 20 torpedoes
+* (Guidance) Enterprise should have roughly 10x the firepower of individual Klingons
+* 10 units of energy per sector on navigation
+* 100 units of energy per quadrant on warp (300 units per quadrant with shields up)
+* phasers can be fired up/down/right/left each of which cut the dissipation by 4
+
+
+
+
+
+* phaser energy dissipates Pdest = PInitial / 2Pi*r (r in sectors). If the captain elects to send phasor in just one "quadrant", the it is Pdest = 2 * Pinit / Pi*r
+
+
+
+API
+
+GET /Games -- Get a list of all active games
+GET /Games/ID -- Get details of game ID
+DELETE /Games/ID -- Delete game ID
+
+GET /Users -- Get a list of all users
+GET /Users/ID -- Get details of user ID
+DELETE /Users/ID -- Delete user ID
+PUT /Users/ID -- Create user ID

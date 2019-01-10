@@ -8,3 +8,8 @@ StarTrekDomain/bin/Debug/
 StarTrekDomain/obj/Debug/
 /StarTrekTest/obj/Debug
 /StarTrekTest/bin/Debug
+/.vs/StarTrek/v15/Server/sqlite3/storage.ide-wal
+/.vs/StarTrek/v15/Server/sqlite3/storage.ide-shm
+/.vs/StarTrek/v15/Server/sqlite3/storage.ide
+/.vs/StarTrek/v15/Server/sqlite3/db.lock
+/.vs/StarTrek/v15/Server/sqlite3

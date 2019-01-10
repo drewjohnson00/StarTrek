@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using StarTrek.Messages;
+using PointRobertsSoftware.StarTrek.WPFclient.Messages;
 
-namespace StarTrek
+namespace PointRobertsSoftware.StarTrek.WPFclient
 {
     public class Communication
     {

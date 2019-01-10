@@ -1,4 +1,5 @@
-﻿namespace StarTrek.Models
+﻿
+namespace PointRobertsSoftware.StarTrek.WPFclient.Models
 {
     public class KnownGalaxy
     {

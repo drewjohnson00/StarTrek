@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="PointRobertsSoftware.StarTrek.UserControls.Galaxy"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="using:PointRobertsSoftware.StarTrek.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+    </UserControl.Resources>
+    <Grid Background="Beige">
+        <StackPanel Orientation="Vertical" >
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[0].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[1].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[2].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[3].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[4].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[5].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[6].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[7].Summary}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,5">
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[8].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[9].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[10].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[11].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[12].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[13].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[14].Summary}" />
+                <TextBlock Margin="8,0" Text="{Binding Path=QuadrantList[15].Summary}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
+
+<!--<ItemsControl ItemsSource="{Binding QuadrantSummaryRows}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Vertical"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+
+
+                    <ItemsControl ItemsSource="{Binding QuadrantSummaryRow}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Summary, diag:PresentationTraceSources.TraceLevel=High}"></Label>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>-->

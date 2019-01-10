@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StarTrek.Messages;
+using PointRobertsSoftware.StarTrek.WPFclient.Messages;
 
-namespace StarTrek
+namespace PointRobertsSoftware.StarTrek.WPFclient
 {
     public sealed class RealityQueue
     {

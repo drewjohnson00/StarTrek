@@ -1,8 +1,7 @@
-﻿using StarTrekDomain;
-using System;
-using System.ComponentModel;
+﻿using System;
+using PointRobertsSoftware.StarTrek.Domain;
 
-namespace StarTrek.Models
+namespace PointRobertsSoftware.StarTrek.WPFclient.Models
 {
     public class Quadrant : IQuadrant
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarTrekDomain
+namespace PointRobertsSoftware.StarTrek.Domain
 {
     public enum SectorContent { Empty, Star, Base, Enterprise, KlingonShip}
 

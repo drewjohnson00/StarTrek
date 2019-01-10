@@ -1,6 +1,6 @@
-﻿using StarTrekDomain;
+﻿using PointRobertsSoftware.StarTrek.Domain;
 
-namespace StarTrek.Models
+namespace PointRobertsSoftware.StarTrek.WPFclient.Models
 {
     public class Sector : ISector
     {

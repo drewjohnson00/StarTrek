@@ -12,9 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using StarTrek.ViewModels;
+using PointRobertsSoftware.StarTrek.WPFclient.ViewModels;
 
-namespace StarTrek.UserControls
+namespace PointRobertsSoftware.StarTrek.WPFclient.UserControls
 {
     /// <summary>
     /// Interaction logic for Galaxy.xaml

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StarTrek.Models;
-using StarTrek.Messages;
+using PointRobertsSoftware.StarTrek.WPFclient.Models;
+using PointRobertsSoftware.StarTrek.WPFclient.Messages;
 using System.Threading;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using Newtonsoft.Json;
 
-namespace StarTrek
+namespace PointRobertsSoftware.StarTrek.WPFclient
 {
 
     // TODO -- Does this constructor need to be thread safe?

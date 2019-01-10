@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StarTrek.Messages
+namespace PointRobertsSoftware.StarTrek.WPFclient.Messages
 {
     public class QuadrantSummaryMessage : IMessage
     {

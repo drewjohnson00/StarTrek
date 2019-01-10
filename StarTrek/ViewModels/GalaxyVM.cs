@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
-using StarTrek.Models;
+using PointRobertsSoftware.StarTrek.WPFclient.Models;
 
-namespace StarTrek.ViewModels
+namespace PointRobertsSoftware.StarTrek.WPFclient.ViewModels
 {
     public class GalaxyVM : INotifyPropertyChanged
     {

@@ -1,0 +1,1 @@
+﻿{"ContextClassName":"StartrekContext","DefaultDacpacSchema":null,"IdReplace":false,"IncludeConnectionString":true,"OutputPath":"Model","ProjectRootNamespace":"StarTrekApi","SelectedToBeGenerated":0,"Tables":["dbo.Users"],"UseDatabaseNames":false,"UseFluentApiOnly":true,"UseHandleBars":false,"UseInflector":false}

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace StarTrek
+namespace PointRobertsSoftware.StarTrek.WPFclient
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

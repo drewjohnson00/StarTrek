@@ -2,10 +2,10 @@
 using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using StarTrek.Messages;
-using StarTrek;
+using PointRobertsSoftware.StarTrek.WPFclient.Messages;
+using PointRobertsSoftware.StarTrek.WPFclient;
 
-namespace StarTrekTest.MessageTests
+namespace PointRobertsSoftware.StarTrek.WPFclient.Tests.MessageTests
 {
     /// <summary>
     /// Summary description for QuadrantSummaryMessageTests

@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="PointRobertsSoftware.StarTrek.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:PointRobertsSoftware.StarTrek.Converters"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <c:CurrentGridToVisibilityConverter x:Key="currentGridToVisibilityConverter" />
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Medium" />
+            <!--<Setter Property="Width" Value="120" />
+            <Setter Property="Height" Value="40" />-->
+            <!--<Setter Property="Margin" Value="10" />-->
+            <Setter Property="HorizontalAlignment" Value="Center" />
+        </Style>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Orientation="Vertical" >
+            <Grid Padding="10" Height="60">
+                <Canvas x:Name="NewGameShadow" />
+                <Button Content="New Game" Name="NewGame" Click="NewGameButton_Click" />
+            </Grid>
+            <Grid Padding="10" Height="60">
+                <Canvas x:Name="LoadGameShadow" />
+                <Button Content="Load Game" Name="LoadGame" Click="LoadGame_Click"/>
+            </Grid>
+            <Canvas x:Name="VerifyServerShadow" Background="Green" Margin="10">
+                <Button Content="Verify Server" Name="VerifyServer" Click="VerifyServer_Click" Background="#779BFF" Foreground="White" />
+            </Canvas>
+        </StackPanel>
+        <Border Grid.Column="1" BorderBrush="Black" Margin="5" CornerRadius="10" Padding="10" BorderThickness="2">
+            <Grid>
+                <Grid Name="NewGameGrid" Visibility="{Binding SelectGrid, Converter={StaticResource currentGridToVisibilityConverter}, ConverterParameter=NewGameGrid}">
+                    <TextBlock Text="Start a new game" />
+                </Grid>
+                <Grid Name="LoadGameGrid" Visibility="{Binding SelectGrid, Converter={StaticResource currentGridToVisibilityConverter}, ConverterParameter=LoadGameGrid}">
+                    <TextBlock Text="Load an existing game" />
+                </Grid>
+                <Grid Name="VerifyServerGrid" Visibility="{Binding SelectGrid, Converter={StaticResource currentGridToVisibilityConverter}, ConverterParameter=VerifyServerGrid}">
+                    <StackPanel>
+                        <TextBlock Text="{Binding VerifyText}" />
+                        <TextBlock Text="{Binding VerifyTextResult}" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

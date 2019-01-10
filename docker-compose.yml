@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  startrekapi:
+    image: ${DOCKER_REGISTRY}startrekapi
+    build:
+      context: .
+      dockerfile: StarTrekApi\Dockerfile
+
+
+  startrekservercore:
+    image: ${DOCKER_REGISTRY}startrekservercore
+    build:
+      context: .
+      dockerfile: StarTrekServerCore\Dockerfile
+
