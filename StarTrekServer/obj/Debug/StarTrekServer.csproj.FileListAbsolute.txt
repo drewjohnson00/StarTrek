@@ -177,7 +177,6 @@ C:\Users\drewa\source\repos\StarTrek\StarTrekServer\bin\Microsoft.Owin.Security.
 C:\Users\drewa\source\repos\StarTrek\StarTrekServer\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\drewa\source\repos\StarTrek\StarTrekServer\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\drewa\source\repos\StarTrek\StarTrekServer\bin\System.Web.Http.Owin.xml
-C:\Users\drewa\source\repos\StarTrek\StarTrekServer\obj\Debug\StarTrekServer.csprojAssemblyReference.cache
 C:\Users\drewa\source\repos\StarTrek\StarTrekServer\obj\Debug\StarTrekServer.csproj.CoreCompileInputs.cache
 C:\Users\drewa\source\repos\StarTrek\StarTrekServer\obj\Debug\StarTrekServer.csproj.CopyComplete
 C:\Users\drewa\source\repos\StarTrek\StarTrekServer\obj\Debug\StarTrekServer.dll

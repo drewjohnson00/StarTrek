@@ -11,6 +11,8 @@ StarTrekClientWpf.Tests/bin
 StarTrekClientWpf.Tests/obj
 StarTrekDomain/bin
 StarTrekDomain/obj
+StarTrekServer/bin
+StarTrekServer/obj
 StarTrekTest/bin
 StarTrekTest/obj
 StarTrekServerCore/bin
