@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrekClientWpf.Tests", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarTrekClientUW", "StarTrekClientUW\StarTrekClientUW.csproj", "{D377ED96-AF52-43B1-9D9E-47E48707064F}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "StarTrekDb", "StarTrekDb\StarTrekDb.sqlproj", "{F3B80C70-AB96-446C-B797-D6DA13925BAD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +183,30 @@ Global
 		{D377ED96-AF52-43B1-9D9E-47E48707064F}.Release|x86.ActiveCfg = Release|x86
 		{D377ED96-AF52-43B1-9D9E-47E48707064F}.Release|x86.Build.0 = Release|x86
 		{D377ED96-AF52-43B1-9D9E-47E48707064F}.Release|x86.Deploy.0 = Release|x86
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|ARM.Build.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|ARM.Deploy.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|x64.Build.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|x86.Build.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|ARM.ActiveCfg = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|ARM.Build.0 = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|ARM.Deploy.0 = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|x64.ActiveCfg = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|x64.Build.0 = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|x64.Deploy.0 = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|x86.ActiveCfg = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|x86.Build.0 = Release|Any CPU
+		{F3B80C70-AB96-446C-B797-D6DA13925BAD}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

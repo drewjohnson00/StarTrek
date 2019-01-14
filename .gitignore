@@ -9,6 +9,9 @@ StarTrekClientWpf/bin
 StarTrekClientWpf/obj
 StarTrekClientWpf.Tests/bin
 StarTrekClientWpf.Tests/obj
+StarTrekDb/bin
+StarTrekDb/Import Schema Logs
+StarTrekDb/obj
 StarTrekDomain/bin
 StarTrekDomain/obj
 StarTrekServer/bin
