@@ -24,3 +24,7 @@ StarTrekServerCore.Tests/bin
 StarTrekServerCore.Tests/obj
 /.vs
 
+
+StarTrekDb/StarTrekDb\.jfm
+
+StarTrekDb/StarTrekDb\.dbmdl
