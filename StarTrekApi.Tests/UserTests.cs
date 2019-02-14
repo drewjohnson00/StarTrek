@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 
-namespace StarTrekApi.Tests
+namespace PointRobertsSoftware.StarTrek.Api.Tests
 {
     [TestClass]
     public class UserTests
@@ -28,16 +28,13 @@ namespace StarTrekApi.Tests
                 Users = allUsers
             };
 
-            //var services = new ServiceCollection();
-            //services.AddTransient<TestStartrekContext, DbContext>();
-
             var usersController = new UsersController(testContext);
             List<User> result = (List<User>)usersController.Get();
 
             Assert.AreEqual(allUsers.Count, result.Count);
             foreach (User user in allUsers)
             {
-                result.Contains(user);
+                Assert.IsTrue(result.Contains(user));
             }
         }
 

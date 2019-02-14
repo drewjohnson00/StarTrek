@@ -3,14 +3,13 @@ using PointRobertsSoftware.StarTrek.Domain.Models;
 
 namespace PointRobertsSoftware.StarTrek.Api.Data
 {
-    public class UserContext : DbContext
+    public class GameContext : DbContext
     {
-        public UserContext(DbContextOptions<UserContext> options) : base(options)
+        public GameContext(DbContextOptions<UserContext> options) : base(options)
         {
 
         }
 
-
-        public DbSet<User> Users { get; set; }
+        public DbSet<Game> Games { get; set; }
     }
 }

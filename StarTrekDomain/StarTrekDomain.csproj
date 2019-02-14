@@ -45,8 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\BaseState.cs" />
+    <Compile Include="Models\CollisionResult.cs" />
+    <Compile Include="Models\EnterpriseState.cs" />
     <Compile Include="IQuadrant.cs" />
     <Compile Include="ISector.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\GameState.cs" />
+    <Compile Include="Models\KlingonState.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\StarState.cs" />
+    <Compile Include="Models\State.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -48,7 +48,7 @@ namespace PointRobertsSoftware.StarTrek.Api.Controllers
                 return NotFound();
             }
 
-            return result; // TODO -- Verify this works... 
+            return result; 
         }
 
         // POST: api/Users
